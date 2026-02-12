@@ -23,6 +23,7 @@
     pkgs.whitesur-icon-theme
     pkgs.apple-cursor
     pkgs.whitesur-gtk-theme
+    pkgs.application-title-bar
   ];
 
   programs.plasma = {
@@ -49,10 +50,46 @@
         height = 35;
         widgets = [
           "org.kde.plasma.kickoff"
+          {
+            name = "com.github.antroids.application-title-bar";
+            # grep "com.github.antroids.application-title-bar" -A 20 ~/.config/plasma-org.kde.plasma.desktop-appletsrc
+            config = {
+              General = {
+                titleType = "2";
+                widgetLayout = "OnlyTitle";
+                showTitleBold = "true";
+                customFontSize = "14";
+              };
+              Appearance = {
+                widgetElements = "windowTitle";
+                windowTitleFontSize = "10";
+                widgetToolTipMode="Disabled";
+                windowTitleSource="AppName";
+                windowTitleUndefined="Files";
+              };
+              Buttons = {
+                showButtons = "false";
+              };
+              Icon = {
+                showIcon = "false";
+              };
+            };
+          }
           "org.kde.plasma.appmenu"
           "org.kde.plasma.panelspacer"
           "org.kde.plasma.systemtray"
-          "org.kde.plasma.digitalclock"
+          {
+            name = "org.kde.plasma.digitalclock";
+            config = {
+              Appearance = {
+                showDate = "true";
+                showSeconds = "true";
+                dateDisplayFormat = "BesideTime";
+                dateFormat = "custom";
+                customDateFormat = "ddd MMM d";
+              };
+            };
+          }
         ];
       }
       {
