@@ -82,17 +82,17 @@
               ];
             };
           }
-          {
-            name = "org.kde.plasma.folder";
-            config = {
-              General = {
-                url = "file:///home/i/ia/iancheung/remote";
-                label = "Remote";
-              };
-            };
-          }
+          # {
+            # name = "org.kde.plasma.folder";
+            # config = {
+              # General = {
+                # url = "file:///home/i/ia/iancheung/remote";
+                # label = "Remote";
+              # };
+            # };
+          # }
           # "org.kde.plasma.icontasks" # Recently Used
-          "org.kde.plasma.trash"       # Trash
+          # "org.kde.plasma.trash"       # Trash
         ];
       }
     ];
