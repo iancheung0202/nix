@@ -9,7 +9,7 @@ The following code snippets is in the `.desktoprc` file in `~/remote`, which run
 rm -rf ~/.gtkrc-2.0 ~/.config/gtk-3.0 ~/.config/gtk-4.0
 
 export NIXPKGS_ALLOW_UNFREE=1
-nix run home-manager -- switch --flake ~/remote/home-manager --impure
+nix run home-manager -- switch --flake ~/remote/home-manager --impure -b backup
 
 bash ~/.local/share/plasma-manager/run_all.sh
 ```
